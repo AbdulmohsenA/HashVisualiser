@@ -1,6 +1,6 @@
 # HashVisualiser
 
-This is a basic python program to visualise hash functions as an image, what
+This is a basic python program to visualise hash functions as an image.
 
 ## For your function.
 ### INPUT
