@@ -33,10 +33,8 @@ pixels = pseudoRandom(pixels)
 pixels = pixels - np.min(pixels)                    # To start from 0 -> infinity
 pixelScaled = pixels / pixels.max()                 # Scale down to be from 0 - 1
 pixels = np.round(pixelScaled * 255)                # Default, Allow grayscale.
-#pixelsBW = np.round(pixelScaled) * 255             # Alt, Either be white or black, No greyscaling.
+#pixelsBW = np.round(pixelScaled) * 255             # Alt, Either be white or black, No grayscaling.
 pixels = pixels.reshape((width, height))            # Reshape to see as a square image
-
-pixels = pixels                                     # pixelsGS = Grayscaled, pixelsBW = Black and White
 
 img = Image.fromarray(pixels)
 img.show()
