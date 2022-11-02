@@ -8,7 +8,7 @@ def pseudoRandom(seed):
     #######
 
     # Examples:
-    # n = (seed ** 2) % 45              # Bad, you can easily see patterns
+    # n = np.sin(seed)                  # Bad, you can easily see patterns
     # n = np.sin(seed * np.cos(seed))   # Good, no patterns can be easily detected.
 
     # This should be a white screen indicating all output to be 1, the famous Trigonometry identity.
@@ -26,11 +26,11 @@ def pseudoRandom(seed):
 width = 500
 height = width
 
-pixels = np.arange(width*height, dtype=np.int64)
+pixels = np.arange(1, width*height + 1, dtype=np.int64)
 pixels = pseudoRandom(pixels)
 
 # Processing
-pixels = np.abs(pixels)                             # Only positive values
+pixels = pixels - np.min(pixels)                    # To start from 0 -> infinity
 pixelScaled = pixels / pixels.max()                 # Scale down to be from 0 - 1
 pixels = np.round(pixelScaled * 255)                # Default, Allow grayscale.
 #pixelsBW = np.round(pixelScaled) * 255             # Alt, Either be white or black, No greyscaling.
